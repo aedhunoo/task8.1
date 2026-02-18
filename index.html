@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Find Capital</title>
+ <style>
+ body {
+ font-family: Arial, sans-serif;
+ text-align: center;
+ margin-top: 100px;
+ }
+ select {
+ padding: 8px;
+ font-size: 16px;
+ }
+ #capital-display {
+ display: block;
+ margin-top: 20px;
+ color: rgb(97, 7, 199);
+ font-weight: bold;
+ font-size: 24px;
+ }
+ </style>
+</head>
+<body>
+ <select id="country-select" onchange="displayCapital()">
+ <option value="" disabled selected>Select a Country</option>
+ <option value="India">India</option>
+ <option value="France">France</option>
+ <option value="Russia">Russia</option>
+ <option value="Japan">Japan</option>
+ <option value="Germany">Germany</option>
+ </select>
+ <br></br>
+ <span id="capital-display"></span>
+ <script>
+ const capitals = {
+ India: "New Delhi",
+ France: "Paris",
+ Russia: "Moscow",
+ Japan: "Tokyo",
+ Germany: "Berlin"
+ };
+ function displayCapital() {
+ const country =
+document.getElementById("country-select").value;
+ document.getElementById("capital-display").innerText =
+capitals[country] || "";
+ }
+ </script>
+</body>
+</html>
